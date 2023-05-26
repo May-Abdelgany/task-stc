@@ -27,5 +27,4 @@ export const productReducer = createReducer(
         loading: false,
         error,
     }))
-
 );
