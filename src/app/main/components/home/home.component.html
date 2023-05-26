@@ -1,0 +1,36 @@
+<mat-drawer-container class="example-container">
+    <!--sidebar of all categories-->
+    <mat-drawer mode="side" opened="true" [ngClass]="{'maxWidth':open,'minWidth':!open}">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://t4.ftcdn.net/jpg/03/31/93/85/360_F_331938599_nmkc39B7E74s1G5P01b0YCJ6x0MNMqJz.jpg"
+                    alt="logo" style="width:75px;height: 75px;" class="rounded-circle">
+            </div>
+            <ul class="menu">
+                <li *ngFor="let category of allCategories;let i=index" (click)="productPage(i)"><a>{{category}}</a>
+                </li>
+            </ul>
+
+            <div class="lang">
+                <p translate="changeLang">
+                    <span *ngIf="lang=='en'" class="text-muted" (click)="changeLang('ar')">
+                        arabic language</span>
+                    <span *ngIf="lang=='ar'" class="text-muted" (click)="changeLang('en')">
+                        اللغة الإنجليزية</span>
+                </p>
+            </div>
+            <div class="fs-4 text-center ">
+                <p translate="logout" class="logout" (click)="logout()"></p>
+            </div>
+        </div>
+    </mat-drawer>
+    <!--content -->
+    <mat-drawer-content [ngClass]="{'opacity-50':open,'opacity-100':!open}">
+        <div class="mt-2 container-fluid">
+            <button class="btn btn-outline-primary pt-2 mx-1 mt-2" [ngClass]="{'buttonMargin':open}"
+                (click)="sidebar()"><i class="bi bi-list "></i></button>
+            <router-outlet></router-outlet>
+            <app-loader *ngIf="loaderService.isLoading | async"></app-loader>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

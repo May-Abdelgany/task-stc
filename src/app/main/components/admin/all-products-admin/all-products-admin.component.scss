@@ -1,0 +1,36 @@
+::ng-deep .mat-sort-header-container {
+    justify-content: center !important;
+}
+
+th,
+td {
+    text-align: center !important;
+}
+
+.container {
+    --bs-gutter-x: 0rem !important;
+}
+
+.image {
+    height: 80px;
+    width: 80px;
+    margin: 5px auto;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.search {
+    width: 84%;
+}
+
+.pagination {
+    width: fit-content;
+}
+
+.table-container {
+    overflow-x: auto !important;
+
+    ::ng-deep .mdc-data-table__table {
+        white-space: nowrap;
+    }
+}

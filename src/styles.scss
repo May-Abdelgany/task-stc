@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0px;
+    margin: 0px;
+  
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.directionRTL {
+    direction: rtl;
+    font-family: 'El Messiri', sans-serif;
+    .mat-sidenav {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+
+
+
+    .buttonMargin {
+        right: 250px !important;
+        position: fixed
+    }
+
+}
+
+
+
+.directionLTR {
+    direction: ltr;
+    font-family: 'DM Sans', sans-serif;
+
+
+    .mat-sidenav {
+        left: 0 !important;
+        right: auto !important;
+    }
+
+
+    .buttonMargin {
+        left: 250px !important;
+        position: fixed
+    }
+}
+
+p,
+h1,
+span {
+    padding: 10px 0px;
+}
+
+@media (max-width: 899px) {
+    mat-drawer-content {
+        margin: 0px !important;
+    }
+}
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Set the background color of the scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Set the color and style of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(55, 135, 227);
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+}
+
+/* Set the color and style of the scrollbar thumb when it's being hovered over */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+// p {
+//     overflow-y: hidden;
+// }

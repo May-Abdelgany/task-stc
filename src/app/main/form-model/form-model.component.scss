@@ -1,0 +1,18 @@
+.selectOptions {
+    ::ng-deep .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+
+    ::ng-deep .mat-mdc-select-arrow-wrapper {
+        margin-top: 25px;
+    }
+
+    ::ng-deep .mat-mdc-select-arrow {
+        position: unset !important;
+    }
+}
+
+// ::ng-deep .mat-mdc-form-field-error {
+//     min-height: fit-content;
+// }

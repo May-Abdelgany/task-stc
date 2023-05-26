@@ -1,0 +1,57 @@
+<h2 mat-dialog-title class="text-center fs-4 pt-1" [translate]="type"></h2>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-dialog-content>
+        <div class="example-container mb-3">
+            <mat-form-field class="w-50 px-2 ">
+                <mat-label translate="productTitle"></mat-label>
+                <input class="px-3" matInput placeholder="product name" formControlName="title">
+                <mat-error *ngIf="controls['title'].hasError('required')" translate="titleRequired"></mat-error>
+                <mat-error *ngIf="controls['title'].hasError('pattern')" translate="titleInvalid"></mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-50 px-2">
+                <mat-label translate="productImage"></mat-label>
+                <input class="px-3" matInput placeholder="image path" formControlName="image">
+                <mat-error *ngIf="controls['image'].hasError('required')" translate="imageRequired"></mat-error>
+            </mat-form-field>
+        </div>
+        <div class="d-flex">
+            <div class="example-container mb-3 px-2 w-50">
+                <mat-form-field floatLabel="always" class="w-100">
+                    <mat-label translate="productPrice"></mat-label>
+                    <input matInput type="number" min="1" class="example-right-align" placeholder="1"
+                        formControlName="price">
+                    <span matTextPrefix>$&nbsp;</span>
+                    <span matTextSuffix>.00</span>
+                    <mat-error *ngIf="controls['price'].hasError('required')" translate="priceRequired"></mat-error>
+                    <mat-error *ngIf="controls['price'].hasError('min')" translate="priceInvalid"></mat-error>
+                </mat-form-field>
+            </div>
+            <div class="selectOptions mb-3 px-2 w-50">
+                <mat-form-field class="w-100">
+                    <mat-label translate="categoryType"></mat-label>
+                    <mat-select formControlName="category">
+                        <mat-option [value]="item" *ngFor="let item of allCategories">{{item}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="controls['category'].hasError('required')"
+                        translate="categoryRequired"></mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="mb-3">
+            <mat-form-field class="w-100">
+                <mat-label translate="productDescription"></mat-label>
+                <textarea matInput formControlName="description" placeholder="product description"></textarea>
+                <mat-error *ngIf="controls['description'].hasError('required')"
+                    translate="descriptionRequired"></mat-error>
+                <mat-error *ngIf="controls['description'].hasError('pattern')"
+                    translate="descriptionInvalid"></mat-error>
+            </mat-form-field>
+        </div>
+        <button [translate]="sharedData.id?'updated':'add'" class="fs-5 fw-500 btn px-3 mx-1" type="submit"
+            [disabled]="form.invalid" [ngClass]="{
+                'btn-warning':sharedData.id,
+                'btn-primary':!sharedData.id}
+            " [mat-dialog-close]="true"></button>
+        <button [mat-dialog-close]="false" class="fs-5 fw-500 btn btn-secoundry px-3 mx-1" translate="cancle"></button>
+    </mat-dialog-content>
+</form>

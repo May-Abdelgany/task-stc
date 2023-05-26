@@ -1,0 +1,33 @@
+.mat-card {
+    margin: 1rem;
+
+    img {
+
+        text-align: center;
+    }
+}
+
+
+.mdc-card__media {
+    width: 200px;
+    margin: auto;
+}
+
+.rate {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.rate .mat-icon {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.rate .mat-icon.active {
+    color: gold;
+}
+
+.count {
+    margin-top: 0.5rem;
+}
+
